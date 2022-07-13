@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # -*-coding:utf-8 -*-
 '''
-@File    :   app.py
-@Time    :   2021/05/16 18:11:21
-@Author  :   Shanto Roy 
-@Version :   1.0
-@Contact :   sroy10@uh.edu
-@License :   (C)Copyright 2020-2021, Shanto Roy
 @Desc    :   None
 '''
 
@@ -28,7 +22,7 @@ sys.path.append('scripts/')
 
 from visualization import st_data_visualization
 from feature_select import st_feature_selection
-from classification import st_classification
+from simpleclassification import st_classification
 
 def try_read_df(f, f_name):
     filename, file_extension = os.path.splitext(f_name)
@@ -60,7 +54,7 @@ def main():
     # app functionalities
     primary_function = st.sidebar.selectbox(
         'Choose App Functionality', ["Upload CSV File", "Data Visualization", \
-                    "Data Cleanup", "Feature Selection", "Classification"])
+                     "Classification"])
 
     if primary_function == "Upload CSV File":
         uploaded_file = st.sidebar.file_uploader("Upload a CSV/Excel file", accept_multiple_files=False,\
